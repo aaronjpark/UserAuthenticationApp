@@ -1,0 +1,12 @@
+node_modules
+.expo
+.expo-shared
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+*.jks
+*.keystore
+*.jks
+*.keystore
+*.p12
