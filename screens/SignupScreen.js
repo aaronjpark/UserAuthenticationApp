@@ -7,11 +7,13 @@ import { createUser } from "../util/auth";
 
 function SignupScreen() {
   const [isAuthenticating, setIsAuthenticating] = useState(false);
+  const authCtx = useContext(AuthContext);
 
   async function signupHandler({ email, password }) {
     setIsAuthenticating(true);
     try {
-      await createUser(email, password);
+      const token = await createUser(email, password);
+      authCtx.authenticate(token);
     } catch (error) {
       Alert.alert(
         "Authentication failed!",
